@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Selection</title>
+  <style>
+    body {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .box {
+      background: white;
+      border: 1px solid black;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    .session {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .session button {
+      padding: 5px 10px;
+    }
+    .new-chat {
+      margin-top: 20px;
+    }
+    input[type="text"] {
+      width: calc(100% - 20px);
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 8px;
+      background: #eee;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="sessions">
+      <div class="session">
+        <span>ID: 1</span>
+        <button onclick="joinSession(1)">Join</button>
+      </div>
+      <div class="session">
+        <span>ID: 2</span>
+        <button onclick="joinSession(2)">Join</button>
+      </div>
+      <div class="session">
+        <span>ID: 3</span>
+        <button onclick="joinSession(3)">Join</button>
+      </div>
+    </div>
+    <div class="new-chat">
+      <form action="chat.html" method="post">
+        <input type="text" name="newSession" placeholder="New Chat Session" required>
+        <input type="submit" value="Create Chat">
+      </form>
+    </div>
+  </div>
+  <script>
+    function joinSession(id) {
+      // This function can be expanded to handle session joining.
+      window.location.href = 'chat.html?session=' + id;
+    }
+  </script>
+</body>
+</html>

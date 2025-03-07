@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat</title>
+  <style>
+    body {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .chat-container {
+      width: 80%;
+      border: 1px solid black;
+      padding: 20px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      height: 80vh;
+    }
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+    .input-area {
+      display: flex;
+    }
+    .input-area input[type="text"] {
+      flex: 1;
+      padding: 8px;
+    }
+    .input-area input[type="submit"] {
+      padding: 8px;
+      border: 1px solid black;
+      background: #eee;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="messages">
+      <p>Welcome to the chat session!</p>
+    </div>
+    <form class="input-area" action="#" method="post">
+      <input type="text" name="message" placeholder="Type your message here..." required>
+      <input type="submit" value="Send">
+    </form>
+  </div>
+</body>
+</html>
