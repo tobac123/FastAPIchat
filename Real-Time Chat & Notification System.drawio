@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2025-03-06T20:25:34.473Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.5.1 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="it-MYqq8dmSXVJjJzX_d" version="24.5.1" type="device">
+<mxfile host="Electron" modified="2025-03-08T19:47:29.125Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.5.1 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="PKLS8vstF4tavX8skxWn" version="24.5.1" type="device">
   <diagram name="Page-1" id="5f0bae14-7c28-e335-631c-24af17079c00">
     <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -20,7 +20,7 @@
         <mxCell id="N1iORH_VBiGZweCO6mFe-9" value="[Input box]" style="whiteSpace=wrap;html=1;align=left;" parent="N1iORH_VBiGZweCO6mFe-8" vertex="1">
           <mxGeometry y="175" width="230" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="N1iORH_VBiGZweCO6mFe-1" value="LogIn as guest:&lt;div&gt;[username]&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="hNGjXtIpF4mTHntng4F8-2" vertex="1">
+        <mxCell id="N1iORH_VBiGZweCO6mFe-1" value="LogIn/Register:&lt;div&gt;[username]&lt;/div&gt;&lt;div&gt;[password]&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="hNGjXtIpF4mTHntng4F8-2" vertex="1">
           <mxGeometry x="740" y="30" width="230" height="140" as="geometry" />
         </mxCell>
         <mxCell id="zDekBhmBuryORmEvGft8-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="hNGjXtIpF4mTHntng4F8-2" source="zDekBhmBuryORmEvGft8-9" edge="1">
