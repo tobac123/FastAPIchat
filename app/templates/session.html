@@ -48,32 +48,56 @@
 </head>
 <body>
   <div class="box">
-    <div class="sessions">
-      <div class="session">
-        <span>ID: 1</span>
-        <button onclick="joinSession(1)">Join</button>
-      </div>
-      <div class="session">
-        <span>ID: 2</span>
-        <button onclick="joinSession(2)">Join</button>
-      </div>
-      <div class="session">
-        <span>ID: 3</span>
-        <button onclick="joinSession(3)">Join</button>
-      </div>
+    <div class="sessions" id="sessionList">
+      <!-- Dynamic sessions will be inserted here -->
     </div>
     <div class="new-chat">
-      <form action="chat.html" method="post">
-        <input type="text" name="newSession" placeholder="New Chat Session" required>
-        <input type="submit" value="Create Chat">
-      </form>
+      <input type="text" id="newSessionInput" placeholder="New Chat Session" required>
+      <input type="submit" value="Create Chat" onclick="createSession()">
     </div>
   </div>
+
   <script>
-    function joinSession(id) {
-      // This function can be expanded to handle session joining.
-      window.location.href = 'chat.html?session=' + id;
+    async function fetchSessions() {
+      const response = await fetch('/sessions');
+      const sessions = await response.json();
+      const sessionList = document.getElementById("sessionList");
+      sessionList.innerHTML = ''; // Clear existing list
+
+      sessions.forEach(session => {
+        const sessionElement = document.createElement("div");
+        sessionElement.classList.add("session");
+        sessionElement.innerHTML = `
+          <span>ID: ${session.id} | ${session.name}</span>
+          <button onclick="joinSession('${session.id}')">Join</button>
+        `;
+        sessionList.appendChild(sessionElement);
+      });
     }
+
+    async function createSession() {
+      const input = document.getElementById("newSessionInput");
+      const sessionName = input.value.trim();
+      if (!sessionName) return;
+
+      const response = await fetch('/sessions', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: sessionName })
+      });
+
+      if (response.ok) {
+        input.value = "";  // Clear input
+        fetchSessions();  // Refresh session list
+      }
+    }
+
+    function joinSession(id) {
+      window.location.href = `chat.html?session=${id}`;
+    }
+
+    // Fetch sessions when the page loads
+    fetchSessions();
   </script>
 </body>
 </html>

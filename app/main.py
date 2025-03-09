@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from api import routes
-from api.WebSocket import ws_router
+from app.api.routes import router
+from app.api.WebSocket import ws_router
 
 
 app = FastAPI()
-app.include_router(routes.router)
+app.include_router(router)
 app.include_router(ws_router)
 
