@@ -40,6 +40,6 @@ async def get_sessions():
     return fake_db_sessions
 
 @router.post("/sessions", response_model=Session)
-async def create_session(name: str):
+async def create_session(session: Session):
     """Create a new chat session and return it."""
-    return new_session(name)
+    return new_session(session.name)

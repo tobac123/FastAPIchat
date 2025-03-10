@@ -68,7 +68,7 @@
         const sessionElement = document.createElement("div");
         sessionElement.classList.add("session");
         sessionElement.innerHTML = `
-          <span>ID: ${session.id} | ${session.name}</span>
+          <span>ID: ${session.id.slice(0, 4)}... | ${session.name}</span>
           <button onclick="joinSession('${session.id}')">Join</button>
         `;
         sessionList.appendChild(sessionElement);

@@ -9,7 +9,7 @@ class Session(BaseModel):
 def new_session(name: str):
     new = Session(id=str(uuid.uuid4()), name=name)
     fake_db_sessions.append(new)
-    return new_session
+    return new.model_dump()
 
 
 
