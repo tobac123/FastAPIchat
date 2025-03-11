@@ -1,8 +1,8 @@
-from fastapi import APIRouter, Request, Form, HTTPException
+from fastapi import APIRouter, Request, Form, HTTPException, Query
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 
-from app.db import Session, fake_db_sessions, new_session
+from app.db import Session, SessionCreate, fake_db_sessions, new_session
 from typing import List
 
 from .auth import auth_user
@@ -13,7 +13,7 @@ router = APIRouter()
 # LOGIN RUTES:
 
 @router.get("/", response_class=HTMLResponse)
-async def to_login(request: Request):
+async def rout():
     return RedirectResponse("/login")
 
 @router.get("/login", response_class=HTMLResponse)
@@ -39,7 +39,13 @@ async def get_sessions():
     """Return all chat sessions."""
     return fake_db_sessions
 
-@router.post("/sessions", response_model=Session)
-async def create_session(session: Session):
+@router.post("/sessions", response_model=SessionCreate)
+async def create_session(session: SessionCreate):
     """Create a new chat session and return it."""
     return new_session(session.name)
+
+# CHAT RUTES:
+
+@router.get("/chat.html")
+async def chat(request: Request, session: str = Query(...)):
+    return templates.TemplateResponse("chat.html", {"request": request, "session": session})

@@ -6,6 +6,9 @@ class Session(BaseModel):
     id: str
     name: str
 
+class SessionCreate(BaseModel):
+    name: str
+
 def new_session(name: str):
     new = Session(id=str(uuid.uuid4()), name=name)
     fake_db_sessions.append(new)
