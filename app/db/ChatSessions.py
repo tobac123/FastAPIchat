@@ -1,6 +1,9 @@
-from pydantic import BaseModel
-from .DataBase import fake_db_sessions
 import uuid
+
+from pydantic import BaseModel
+
+from .DataBase import fake_db_sessions
+
 
 class Session(BaseModel):
     id: str

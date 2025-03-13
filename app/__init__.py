@@ -1,7 +1,8 @@
 
 # app/__init__.py
 
-import app.db
 import app.api
+import app.cfg
+import app.db
 
-__all__ = ["db", "api"]
+__all__ = ["db", "api", "cfg"]

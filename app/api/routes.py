@@ -1,10 +1,10 @@
+from typing import List
+
 from fastapi import APIRouter, Request, Form, HTTPException, Query
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 
 from app.db import Session, SessionCreate, fake_db_sessions, new_session
-from typing import List
-
 from .auth import auth_user
 
 templates = Jinja2Templates(directory="templates")
